@@ -1,0 +1,47 @@
+# Node modules
+/node_modules
+/client/node_modules
+/server/node_modules
+
+# Build output
+/.next
+/client/.next
+/server/dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# TypeScript
+*.tsbuildinfo
+
+# Next.js specific
+.next/
+out/
+
+# IDE files
+.idea/
+.vscode/
+
+# Dependency directories
+client/node_modules/
+server/node_modules/
+
+# Optional: Uncomment if using Docker
+# .docker/
+
+# Test coverage
+/coverage
