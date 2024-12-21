@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';  // To access environment variables
 import { Post } from '../database/entities/post.entity';  // Add entities that you want to manage
+import { User } from './entities/user.entity';  // Make sure this path is correct
 
 @Module({
   imports: [
@@ -14,7 +15,7 @@ import { Post } from '../database/entities/post.entity';  // Add entities that y
         username: configService.get('DB_USER'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        entities: [Post],
+        entities: [Post, User],
         synchronize: true,
       }),
       inject: [ConfigService],
