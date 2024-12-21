@@ -45,3 +45,4 @@ server/node_modules/
 
 # Test coverage
 /coverage
+/server/api_test/test_tokens.txt    

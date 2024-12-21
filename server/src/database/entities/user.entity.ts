@@ -1,16 +1,16 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity('users')
+@Entity()
 export class User {
   @PrimaryGeneratedColumn()
-  userId: number;
+  id: number;
 
   @Column({ unique: true })
   username: string;
 
   @Column()
-  password: string; // You should store hashed passwords
+  password: string;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 }

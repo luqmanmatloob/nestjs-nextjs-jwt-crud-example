@@ -20,7 +20,7 @@ export class UserService {
     const newUser = this.userRepository.create({ username, password: hashedPassword, email });
     return this.userRepository.save(newUser);
   }
-
+  
   // Optional: You can add a method to validate the user during login
   async validatePassword(username: string, password: string): Promise<boolean> {
     const user = await this.findOneByUsername(username);
