@@ -1,0 +1,42 @@
+# Test: Register a new user
+POST http://localhost:3000/users/create
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpassword",
+  "email": "testuser@example.com"
+}
+
+
+
+###
+
+# Test: Login with the new user credentials
+POST http://localhost:3000/auth/login  
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpassword"
+}
+
+###
+# Test: Invalid Login (Wrong Password)
+POST http://localhost:3000/auth/login  
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "wrongpassword"
+}
+
+###
+# Test: Login with non-existent user
+POST http://localhost:3000/auth/login  
+Content-Type: application/json
+
+{
+  "username": "nonexistentuser",
+  "password": "somepassword"
+}

@@ -1,0 +1,9 @@
+### Test POST /posts API endpoint
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+  "title": "Sample Post Title",
+  "content": "This is a sample content for the blog post."
+}
