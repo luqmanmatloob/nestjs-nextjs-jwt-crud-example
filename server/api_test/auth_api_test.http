@@ -3,9 +3,9 @@ POST http://localhost:3000/users/create
 Content-Type: application/json
 
 {
-  "username": "john doe",
-  "password": "johndoe",
-  "email": "testuser@example.com"
+  "username": "test",
+  "password": "test",
+  "email": "test@example.com"
 }
 
 
@@ -17,8 +17,8 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-  "username": "john doe",
-  "password": "johndoe"
+  "username": "test",
+  "password": "test"
 }
 
 ###

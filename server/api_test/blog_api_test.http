@@ -1,9 +1,8 @@
-### Test POST /posts API endpoint
-
 POST http://localhost:3000/posts
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpYXQiOjE3MzQ4NTU5NjgsImV4cCI6MTczNDg1OTU2OH0.W-dFfJgMPQtsLW9ssNJRMNHjJCY01bsZmN-7RAfmids
 
 {
-  "title": "Sample Post Title",
-  "content": "This is a sample content for the blog post."
+  "title": "My First Post",
+  "content": "This is the content of my first post."
 }

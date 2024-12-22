@@ -14,10 +14,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: JwtPayload) {
-    const user = await this.usersService.findOneByUsername(payload.username); // Find user by username
+    const user = await this.usersService.findOneByUsername(payload.username); // Validate user based on payload
     if (!user) {
       return null; // If user doesn't exist, return null
     }
-    return user; // Attach user to request object
+    return user; // Attach the user object to the request
   }
 }

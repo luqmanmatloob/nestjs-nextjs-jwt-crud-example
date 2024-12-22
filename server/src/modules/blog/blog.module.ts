@@ -3,9 +3,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { BlogController } from './blog.controller';
 import { BlogService } from './blog.service';
 import { Post } from '../../database/entities/post.entity';
+import { User } from '../../database/entities/user.entity'; // Import User entity
+import { AuthModule } from '../auth/auth.module'
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Post])],
+  imports: [TypeOrmModule.forFeature([Post, User]),AuthModule], // Add User here
+
   controllers: [BlogController],
   providers: [BlogService],
 })

@@ -13,11 +13,10 @@ import { UserModule } from '../user/user.module'; // Assuming you have a User mo
       secret: process.env.JWT_SECRET || 'your-secret-key', // JWT secret (use environment variable)
       signOptions: { expiresIn: '1h' }, // Token expiration (1 hour in this example)
     }),
-    UserModule, // Ensure you import UsersModule to access user data for validation
+    UserModule, // Ensure you import UserModule to access user data for validation
   ],
   providers: [AuthService, JwtStrategy],
   controllers: [AuthController],
   exports: [AuthService],
 })
 export class AuthModule {}
-
