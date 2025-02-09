@@ -1,6 +1,6 @@
 POST http://localhost:3000/posts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpYXQiOjE3MzQ4NTU5NjgsImV4cCI6MTczNDg1OTU2OH0.W-dFfJgMPQtsLW9ssNJRMNHjJCY01bsZmN-7RAfmids
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QxMiIsImlhdCI6MTczNzkxMzExOCwiZXhwIjoxNzM3OTE2NzE4fQ.3zMTQGd9FDXIOUXWmzFjZvv0rKE5ANIexSuCBEBaD8c
 
 {
   "title": "My First Post",

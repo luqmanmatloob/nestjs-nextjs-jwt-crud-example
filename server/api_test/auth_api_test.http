@@ -3,22 +3,22 @@ POST http://localhost:3000/users/create
 Content-Type: application/json
 
 {
-  "username": "test",
-  "password": "test",
-  "email": "test@example.com"
+  "username": "test12",
+  "password": "test12",
+  "email": "test12@example.com"
 }
 
 
 
-###
+###                                                                                                                                                                                                                                                               
 
 # Test: Login with the new user credentials
 POST http://localhost:3000/auth/login  
 Content-Type: application/json
 
 {
-  "username": "test",
-  "password": "test"
+  "username": "test12",
+  "password": "test12"
 }
 
 ###
