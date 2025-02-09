@@ -10,7 +10,7 @@ async function bootstrap() {
 
   // Enable CORS with specific configuration
   app.enableCors({
-    origin: 'http://127.0.0.1:5500',  // Allow requests from this origin (your frontend)
+    origin: 'http://localhost:3001',  // Allow requests from this origin (your frontend)
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',  // Allow specific HTTP methods
     allowedHeaders: 'Content-Type, Authorization',  // Allow these headers
     credentials: true,  // Allow cookies/credentials in requests
