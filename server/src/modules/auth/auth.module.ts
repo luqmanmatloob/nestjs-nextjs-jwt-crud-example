@@ -1,22 +1,28 @@
-// auth/auth.module.ts
 import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './strategies/jwt.strategy';
-import { UserModule } from '../user/user.module'; // Assuming you have a User module
+import { LocalStrategy } from './strategies/local.strategy';
+import { UserModule } from '../user/user.module';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule, // Ensure config is loaded
     PassportModule,
-    JwtModule.register({
-      secret: process.env.JWT_SECRET || 'your-secret-key', // JWT secret (use environment variable)
-      signOptions: { expiresIn: '1h' }, // Token expiration (1 hour in this example)
+    JwtModule.registerAsync({
+      imports: [ConfigModule], // Load environment variables
+      inject: [ConfigService],
+      useFactory: (configService: ConfigService) => ({
+        secret: configService.get<string>('JWT_SECRET'), // Use env var
+        signOptions: { expiresIn: '1h' }, // Set expiration
+      }),
     }),
-    UserModule, // Ensure you import UserModule to access user data for validation
+    UserModule,
   ],
-  providers: [AuthService, JwtStrategy],
+  providers: [AuthService, JwtStrategy, LocalStrategy],
   controllers: [AuthController],
   exports: [AuthService],
 })

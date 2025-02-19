@@ -22,11 +22,11 @@ export class UserService {
   }
   
   // Optional: You can add a method to validate the user during login
-  async validatePassword(username: string, password: string): Promise<boolean> {
-    const user = await this.findOneByUsername(username);
-    if (!user) {
-      return false;
-    }
-    return bcrypt.compare(password, user.password); // Compare the password with the stored hashed password
-  }
+  // async validatePassword(username: string, password: string): Promise<boolean> {
+  //   const user = await this.findOneByUsername(username);
+  //   if (!user) {
+  //     return false;
+  //   }
+  //   return bcrypt.compare(password, user.password); // Compare the password with the stored hashed password
+  // }
 }
