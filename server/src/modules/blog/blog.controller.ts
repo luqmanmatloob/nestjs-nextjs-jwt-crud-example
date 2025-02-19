@@ -3,7 +3,7 @@ import { Controller, Post, Body, UseGuards, Request } from '@nestjs/common';
 import { BlogService } from './blog.service';
 import { CreatePostDto } from './dto/create-post.dto';
 import { Post as BlogPost } from '../../database/entities/post.entity';
-import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 
 @Controller('posts')
 export class BlogController {
