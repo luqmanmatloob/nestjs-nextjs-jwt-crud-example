@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function SignupPage() {
   const [form, setForm] = useState({ username: "", email: "", password: "" });
@@ -30,13 +33,19 @@ export default function SignupPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center">
-      <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">Register</h2>
-        <input type="text" name="username" placeholder="Username" className="w-full p-3 border rounded-md dark:bg-gray-700" onChange={handleChange} required />
-        <input type="email" name="email" placeholder="Email" className="w-full p-3 border rounded-md dark:bg-gray-700" onChange={handleChange} required />
-        <input type="password" name="password" placeholder="Password" className="w-full p-3 border rounded-md dark:bg-gray-700" onChange={handleChange} required />
-        <button type="submit" className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600">Register</button>
-      </form>
+      <Card className="w-full max-w-md">
+        <CardHeader>
+          <CardTitle>Register</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <Input type="text" name="username" placeholder="Username" onChange={handleChange} required />
+            <Input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+            <Input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+            <Button type="submit" className="w-full">Register</Button>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
 }
