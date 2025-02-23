@@ -2,6 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function CreatePostPage() {
   const [form, setForm] = useState({ title: "", content: "" });
@@ -45,12 +49,18 @@ export default function CreatePostPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center">
-      <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4 bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">Create a Post</h2>
-        <input type="text" name="title" placeholder="Post Title" className="w-full p-3 border rounded-md dark:bg-gray-700" onChange={handleChange} value={form.title} required />
-        <textarea name="content" placeholder="Post Content" className="w-full p-3 border rounded-md dark:bg-gray-700" onChange={handleChange} value={form.content} required></textarea>
-        <button type="submit" className="w-full p-3 bg-green-500 text-white rounded-md hover:bg-green-600">Create Post</button>
-      </form>
+      <Card className="w-full max-w-md">
+        <CardHeader>
+          <CardTitle>Create a Post</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <Input type="text" name="title" placeholder="Post Title" onChange={handleChange} value={form.title} required />
+            <Textarea name="content" placeholder="Post Content" onChange={handleChange} value={form.content} required />
+            <Button type="submit" className="w-full">Create Post</Button>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
 }
